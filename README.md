@@ -20,4 +20,4 @@ But you probably don't really want to go through all of that do you? Suppose you
 
 Note that, because some of the components depend on others that are built, this will install various packages as it goes along, both in the repositories and the packages it builds.
 
-
+The script will create a folder called `built`. If it completes successfully you'll find an Android apk and five deb packages inside there.
