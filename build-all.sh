@@ -37,7 +37,7 @@ make package
 sudo dpkg -i packages/libpicobt_0.0.1_amd64-dev.run
 sudo dpkg -i packages/libpicobt_0.0.1_amd64-dev.deb
 
-cp packages/libpicobt_0.0.1_amd64-dev.run ../../built/
+cp packages/libpicobt_0.0.1_amd64-run.deb ../../built/
 cp packages/libpicobt_0.0.1_amd64-dev.deb ../../built/
 cd ..
 
