@@ -1,6 +1,14 @@
 # pico-build-all
 
-Build all of the Pico packages in one easy script.
+## About Pico
+
+The Pico project is liberating humanity from passwords. See https://www.mypico.org.
+
+Pico is an alternative to passwords developed at the University of Cambridge that enables a smooth and password-free login to computers, and consists of a smartphone app and associated software on your computer.
+
+## About this repository
+
+The scripts in this repository allow you to build all of the Pico packages in one easy script.
 
 Pico is made up from several components:
 
@@ -28,3 +36,22 @@ The benefit of the makefile is that it'll only perform the steps to update anyth
 Note that, because some of the components depend on others that are built, both the shell script and the makefile will install various packages as they go along, both from the repositories and from the packages it builds. It may ask you to agree for them to be installed, ask you to enter a `sudo` password, or ask you to agree to the ADK licensing agreement as it goes along.
 
 On successful completion, both will create a folder called `built`, inside which you'll find an Android apk and five deb packages.
+
+## License
+
+These scripts are released under the AGPL licence. Read COPYING for information.
+
+## Contributing
+
+We welcome comments and contributions to the project. If you're interested in contributing please see here: https://get.mypico.org/cla/
+
+## Contact and Links
+
+More information can be found at: http://mypico.org
+
+The Pico project team:
+ * Frank Stajano (PI), Frank.Stajano@cl.cam.ac.uk
+ * David Llewellyn-Jones, David.Llewellyn-Jones@cl.cam.ac.uk
+ * Claudio Dettoni, cd611@cam.ac.uk
+ * Seb Aebischer, seb.aebischer@cl.cam.ac.uk
+ * Kat Krol, kat.krol@cl.cam.ac.uk
