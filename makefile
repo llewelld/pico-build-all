@@ -1,4 +1,4 @@
-all: libpico-deb libpicobt-deb libpam-deb androidpico
+all: install-libpam androidpico
 
 .NOTPARALLEL:
 
