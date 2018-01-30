@@ -18,6 +18,13 @@ But you probably don't really want to go through all of that do you? Suppose you
 ./build-all.sh
 ```
 
-Note that, because some of the components depend on others that are built, this will install various packages as it goes along, both in the repositories and the packages it builds.
+Or, if you have `make` installed, you can do the same thing more efficiently with the following.
+```
+make
+```
 
-The script will create a folder called `built`. If it completes successfully you'll find an Android apk and five deb packages inside there.
+The benefit of the makefile is that it'll only perform the steps to update anything that's changed, and will skip steps that don't need to be performed.
+
+Note that, because some of the components depend on others that are built, both the shell script and the makefile will install various packages as they go along, both from the repositories and from the packages it builds. It may ask you to agree for them to be installed, ask you to enter a `sudo` password, or ask you to agree to the ADK licensing agreement as it goes along.
+
+On successful completion, both will create a folder called `built`, inside which you'll find an Android apk and five deb packages inside there.
