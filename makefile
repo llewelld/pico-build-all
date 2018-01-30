@@ -78,6 +78,7 @@ update-libpicobt: working/libpicobt
 
 working/libpicobt/build/packages/$(LIBPICOBT_RUN) working/libpicobt/build/packages/$(LIBPICOBT_DEV): working/libpicobt
 	cd working/libpicobt; \
+	sudo apt install openssh-client git libbluetooth-dev cmake dh-exec gcovr check pkg-config doxygen graphviz; \
 	mkdir build; \
 	cd build; \
 	cmake ..;\
@@ -108,7 +109,7 @@ update-libpico: working/libpico
 
 working/$(LIBPICO_RUN) working/$(LIBPICO_DEV): /usr/include/picobt/bt.h working/libpico
 	cd working/libpico; \
-	sudo apt install libssl-dev libcurl4-openssl-dev libqrencode-dev libbluetooth-dev liburl-dispatcher1-dev pkg-config autotools-dev devscripts debhelper dh-systemd dh-exec git gcc make check openssh-client doxygen graphviz; \
+	sudo apt install libssl-dev libcurl4-openssl-dev libqrencode-dev libbluetooth-dev liburl-dispatcher1-dev pkg-config autotools-dev devscripts debhelper dh-systemd dh-exec build-essential git gcc make check openssh-client doxygen graphviz; \
 	./configure; \
 	$(DEBUILD) $(DEBUILD_FLAGS); \
 	cd ../..
@@ -136,7 +137,7 @@ update-libpam: working/pam_pico
 
 working/$(LIBPAM_RUN): /usr/include/pico/pico.h working/pam_pico
 	cd working/pam_pico; \
-	autoreconf --install; \
+	sudo apt install autoconf autotools-dev libcurl4-openssl-dev libqrencode-dev check cmake libpam0g-dev gcovr libbluetooth-dev libsoup2.4-dev devscripts build-essential openssh-client git debhelper libtool pkg-config libssl-dev libglib2.0-dev dh-systemd libdbus-glib-1-dev libgtk-3-dev liburl-dispatcher1-dev doxygen graphviz; \
 	./configure; \
 	$(DEBUILD) $(DEBUILD_FLAGS); \
 	cd ../..
