@@ -20,7 +20,12 @@ Pico is made up from several components:
 
 You can build them individually by following the instructions in each of the repositories, or check the [developer documentation](https://docs.mypico.org/developer/) for more complete instructions.
 
-But you probably don't really want to go through all of that do you? Suppose you just want to build the lot? If you're using Ubuntu 16.04 you can just clone this repository and run the following shell script.
+But you probably don't really want to go through all of that do you? Suppose you just want to build the lot? If you're using Ubuntu 16.04 you can just clone this repository:
+```
+git clone git@github.com:mypico/pico-build-all.git
+cd pico-build-all
+```
+Then either run the following shell script.
 
 ```
 ./build-all.sh
