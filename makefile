@@ -172,11 +172,13 @@ working/android-pico/android-pico/build/outputs/apk/$(ANDROIDPICO_APK): working/
 
 working/android-pico/android-sdk.tgz:
 	cd working/android-pico; \
+	sudo apt install wget; \
 	wget --output-document=android-sdk.tgz https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz; \
 	cd ../..
 
 working/android-pico/android-sdk-linux: working/android-pico/android-sdk.tgz
 	cd working/android-pico; \
+	sudo apt install openjdk-8-jdk git ant; \
 	tar --extract --gzip --file=android-sdk.tgz; \
 	android-sdk-linux/tools/android update sdk --no-ui --all --filter platform-tools,tools,build-tools-25.0.2,android-23,extra-android-m2repository,extra-google-m2repository; \
 	cd ../..
