@@ -6,9 +6,31 @@ The Pico project is liberating humanity from passwords. See https://www.mypico.o
 
 Pico is an alternative to passwords developed at the University of Cambridge that enables a smooth and password-free login to computers, and consists of a smartphone app and associated software on your computer.
 
-## About this repository
+The scripts in this repository allow you to build all of the Pico packages in one easy script. However, if you just want the binaries on Ubuntu 16.04, you can install directly from the Pico repository instead.
 
-The scripts in this repository allow you to build all of the Pico packages in one easy script.
+## Install the binary
+
+If you're using Ubunutu 16.04 you can install directly from the Pico repository. Just add the repository:
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 22991E96
+sudo add-apt-repository "deb https://get.mypico.org/apt/ xenial main"
+sudo apt update
+```
+
+then install libpam-pico:
+```
+sudo apt install libpam-pico
+```
+
+If you also want the developer files, you can also install these.
+```
+sudo apt install libpicobt-dev
+sudo apt install libpico1-dev
+```
+
+## Install from source
+
+If you want to build from source, the scripts in this repository will help you.
 
 Pico is made up from several components:
 
