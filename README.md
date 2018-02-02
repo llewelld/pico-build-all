@@ -62,7 +62,22 @@ The benefit of the makefile is that it'll only perform the steps to update anyth
 
 Note that, because some of the components depend on others that are built, both the shell script and the makefile will install various packages as they go along, both from the repositories and from the packages it builds. It may ask you to agree for them to be installed, ask you to enter a `sudo` password, or ask you to agree to the ADK licensing agreement as it goes along.
 
-On successful completion, both will create a folder called `built`, inside which you'll find an Android apk and five deb packages.
+On successful completion, both will create a folder called `built`, inside which you'll find an Android apk and five deb packages. The deb packages will already have been installed, but if you want to install them manually from inside the `built` folder, you can use the following.
+```
+sudo dpkg -i libpicobt_0.0.2_amd64-run.deb
+sudo dpkg -i libpicobt_0.0.2_amd64-dev.deb
+sudo dpkg -i libpico1_0.0.3-1_amd64.deb
+sudo dpkg -i libpico1-dev_0.0.3-1_amd64.deb
+sudo dpkg -i libpam-pico_0.0.3-1_amd64.deb
+```
+
+## Uninstall the packages
+
+Independent of how they were installed, the easiest way to uninstall the packages is as follows
+```
+sudo apt remove libpicobt-run
+```
+Since all of the packages depend on this package, it will cause any of the others you also have installed to be removed as well.
 
 ## License
 
