@@ -11,14 +11,14 @@ cd working
 
 # android-pico
 
-sudo apt install openjdk-8-jdk git ant wget android-tools-adb lib32stdc++6 lib32z1
+sudo apt install -y openjdk-8-jdk git ant wget android-tools-adb lib32stdc++6 lib32z1
 git clone git@github.com:mypico/android-pico.git
 cd android-pico
 git submodule init
 git submodule update
 wget --output-document=android-sdk.tgz https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 tar --extract --gzip --file=android-sdk.tgz
-android-sdk-linux/tools/android update sdk --no-ui --all --filter platform-tools,tools,build-tools-25.0.2,android-23,extra-android-m2repository,extra-google-m2repository
+echo y | android-sdk-linux/tools/android update sdk --no-ui --all --filter platform-tools,tools,build-tools-25.0.2,android-23,extra-android-m2repository,extra-google-m2repository
 export ANDROID_HOME=$PWD/android-sdk-linux 
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 ./gradlew assembleDebug
@@ -29,7 +29,7 @@ cd ..
 
 # libpicobt
 
-sudo apt install libbluetooth3-dev libc6 cmake git gcc make pkg-config dh-exec doxygen graphviz
+sudo apt install -y libbluetooth3-dev libc6 cmake git gcc make pkg-config dh-exec doxygen graphviz
 git clone git@github.com:mypico/libpicobt.git
 cd libpicobt
 cmake .
@@ -43,7 +43,7 @@ cd ..
 
 # libpico
 
-sudo apt install \
+sudo apt install -y \
   libssl-dev libcurl4-openssl-dev libqrencode-dev libbluetooth-dev liburl-dispatcher1-dev \
   pkg-config autotools-dev devscripts debhelper dh-systemd dh-exec \
   git gcc make check openssh-client doxygen graphviz
@@ -62,7 +62,7 @@ cd ..
 
 # pam_pico
 
-sudo apt install \
+sudo apt install -y \
   libssl-dev libcurl4-openssl-dev libqrencode-dev libbluetooth-dev liburl-dispatcher1-dev \
   pkg-config autotools-dev devscripts debhelper dh-systemd dh-exec \
   git gcc make check openssh-client doxygen graphviz
