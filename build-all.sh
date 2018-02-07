@@ -34,11 +34,11 @@ git clone git@github.com:mypico/libpicobt.git
 cd libpicobt
 cmake .
 make package
-sudo dpkg -i packages/libpicobt_0.0.1_amd64-dev.run
-sudo dpkg -i packages/libpicobt_0.0.1_amd64-dev.deb
+sudo dpkg -i packages/libpicobt_0.0.2_amd64-dev.run
+sudo dpkg -i packages/libpicobt_0.0.2_amd64-dev.deb
 
-cp packages/libpicobt_0.0.1_amd64-run.deb ../../built/
-cp packages/libpicobt_0.0.1_amd64-dev.deb ../../built/
+cp packages/libpicobt_*_amd64-run.deb ../../built/
+cp packages/libpicobt_*_amd64-dev.deb ../../built/
 cd ..
 
 # libpico
@@ -53,11 +53,11 @@ cd libpico
 make
 make check
 debuild -us -uc -b --lintian-opts -X changes-file
-sudo dpkg -i ../libpico1_0.0.2-1_amd64.deb
-sudo dpkg -i ../libpico1-dev_0.0.2-1_amd64.deb
+sudo dpkg -i ../libpico1_0.0.3-1_amd64.deb
+sudo dpkg -i ../libpico1-dev_0.0.3-1_amd64.deb
 
-cp ../libpico1_0.0.2-1_amd64.deb ../../built/
-cp ../libpico1-dev_0.0.2-1_amd64.deb ../../built/
+cp ../libpico1_*_amd64.deb ../../built/
+cp ../libpico1-dev_*_amd64.deb ../../built/
 cd ..
 
 # pam_pico
@@ -72,9 +72,9 @@ cd pam_pico
 make
 make check
 debuild -us -uc -b --lintian-opts -X changes-file
-sudo dpkg -i ../libpam-pico_0.0.2-1_amd64.deb
+sudo dpkg -i ../libpam-pico_0.0.3-1_amd64.deb
 
-cp ../libpam-pico_0.0.2-1_amd64.deb ../../built/
+cp ../libpam-pico_*-1_amd64.deb ../../built/
 cd ..
 
 # Finalise
