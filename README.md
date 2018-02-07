@@ -47,20 +47,19 @@ But you probably don't really want to go through all of that do you? Suppose you
 git clone git@github.com:mypico/pico-build-all.git
 cd pico-build-all
 ```
-Then either run the following shell script.
+Then run the following shell script. Note that this will install all of the dependencies, accept the Android Developer licence agreement and install the packages it builds without your intervention. If you're concerned about seeing what it's doing and making these decisions yourself, use the makefile detailed below instead.
 
 ```
 ./build-all.sh
 ```
 
-Or, if you have `make` installed, you can do the same thing more efficiently with the following.
+If you're a more advanced user you can use the makefile instead. This assumes you have `make` installed and provides a bit more visibilty. It's configurd to stop at various points to ask your consent (e.g. to install packages). You can run it by typing the following.
+
 ```
 make
 ```
 
 The benefit of the makefile is that it'll only perform the steps to update anything that's changed, and will skip steps that don't need to be performed.
-
-Note that, because some of the components depend on others that are built, both the shell script and the makefile will install various packages as they go along, both from the repositories and from the packages it builds. It may ask you to agree for them to be installed, ask you to enter a `sudo` password, or ask you to agree to the ADK licensing agreement as it goes along.
 
 On successful completion, both will create a folder called `built`, inside which you'll find an Android apk and five deb packages. The deb packages will already have been installed, but if you want to install them manually from inside the `built` folder, you can use the following.
 ```
@@ -70,6 +69,41 @@ sudo dpkg -i libpico1_0.0.3-1_amd64.deb
 sudo dpkg -i libpico1-dev_0.0.3-1_amd64.deb
 sudo dpkg -i libpam-pico_0.0.3-1_amd64.deb
 ```
+
+## Using Pico
+
+You've installed the packages but it hasn't caused any visible change to your system. There are still a few things you need to do: install the app on your phone; pair your phone with your compuater; and configure the PAM.
+
+### Install the app on an Android phone
+
+The easiest way to install the app is to deploy it to your phone via USB. Ensure your phone has [developer debugging](https://www.kingoapp.com/root-tutorials/how-to-enable-usb-debugging-mode-on-android.htm) enabled and connect it via USB to your computer. To check whether your phone is developer-enabled and correctly connected, enter the following on the computer it's connected to. 
+
+```
+adb devices -l
+```
+
+If you don't see your device showing correctly in this list, you'll need to fix this first. In this case check out the details on the [Android developer site](https://developer.android.com/studio/command-line/adb.html).
+
+Once your developer-enabled Android phone is correctly connected to your computer via USB you can install the app with the following.
+```
+adb -d install built/android-pico-debug.apk
+```
+
+In case this fails, it could be because you've got an old version of Pico already installed. Uninstall it from your phone first, then try again.
+
+### Pairing your Pico
+
+You're now in a position to pair the Pico app with your computer. Enter the following on your computer.
+
+```
+gksu "pico-pair --gui --user $USER"
+```
+
+You'll need to enter your password a couple of times and scan the QR code with your Pico. A wizard will take you through the process. At the end of the process, make sure you Bluetooth pair your phone with your computer.
+
+### Configure pam_pico
+
+Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. Unfortunately its also a necessary step to getting Pico working. Therefore please see the [developer documentation](https://docs.mypico.org/developer/pam_pico/#configure) for the gory details.
 
 ## Uninstall the packages
 
