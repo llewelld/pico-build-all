@@ -72,7 +72,7 @@ sudo dpkg -i libpam-pico_0.0.3-1_amd64.deb
 
 ## Using Pico
 
-You've installed the packages but it hasn't caused any visible change to your system. There are still a few things you need to do: install the app on your phone; pair your phone with your compuater; and configure the PAM.
+You've installed the packages but it hasn't caused any visible change to your system. There are still a few things you need to do: install the app on your phone; pair your phone with your computer; and configure the PAM.
 
 ### Install the app on an Android phone
 
