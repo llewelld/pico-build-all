@@ -124,7 +124,7 @@ auth    required /usr/lib/x86_64-linux-gnu/security/pam_pico.so channeltype=btc 
 auth optional pam_gnome_keyring.so
 ```
 
-Now save the file. If you lock your machine now, you'll need your Pico to log in, so make sure you've correctly paired your Pico with your phone as explained above.
+Now save the file. If you lock your machine now, you'll need your Pico to log in, so make sure you've correctly paired your Pico with your phone as explained above before doing anything else.
 
 ## Authenticating with Pico
 
