@@ -70,7 +70,7 @@ sudo dpkg -i libpico1-dev_0.0.3-1_amd64.deb
 sudo dpkg -i libpam-pico_0.0.3-1_amd64.deb
 ```
 
-## Install the app on an Android phone
+## Install Pico an Android phone
 
 The easiest way to install the app is to deploy it to your phone via USB. Ensure your phone has [developer debugging](https://www.kingoapp.com/root-tutorials/how-to-enable-usb-debugging-mode-on-android.htm) enabled and connect it via USB to your computer. To check whether your phone is developer-enabled and correctly connected, enter the following on the computer it's connected to. 
 
@@ -99,7 +99,9 @@ You'll need to enter your password a couple of times and scan the QR code with y
 
 ## Configuring pam_pico
 
-Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. However, let's suppose you're running a default Ubuntu 16.04 installation with no changes to the existing PAM configuration files. We'll go through adding Pico to the Unity lock screen as an example.
+Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. If you want to know the full gory details, please refer to the [developer documentation](https://docs.mypico.org/developer/pam_pico/#configure).
+
+However, let's suppose you're running a default Ubuntu 16.04 installation with no changes to the existing PAM configuration files. We'll go through adding Pico to the Unity lock screen as an example.
 
 For this, open the `/etc/pam.d/unity` file in a text editor as root.
 
@@ -124,11 +126,11 @@ auth    required /usr/lib/x86_64-linux-gnu/security/pam_pico.so channeltype=btc 
 auth optional pam_gnome_keyring.so
 ```
 
-Now save the file. If you lock your machine now, you'll need your Pico to log in, so make sure you've correctly paired your Pico with your phone as explained above.
+Now save the file. If you lock your machine now, you'll need your Pico to log in, so make sure you've correctly paired your Pico with your phone as explained above before doing anything else.
 
 ## Authenticating with Pico
 
-If you're satisfied everything is set up correctly, lock your Unity session and you'll notice the password box has gone. Instead, a button should appear on the Pico scanner screen in your Pico app saying 'Touch to log in'.
+If you're satisfied everything is set up correctly, lock your Unity session and you'll notice the password box has gone. Instead, a button will appear on the Pico scanner screen of your Pico prompting you to 'Touch to log in'.
 
 Touch the button and Pico will log you in to your computer. Check out the [end user instructions](https://get.mypico.org/linux/#use-pico) for more info about how to use Pico.
 
