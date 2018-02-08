@@ -99,7 +99,9 @@ You'll need to enter your password a couple of times and scan the QR code with y
 
 ## Configuring pam_pico
 
-Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. However, let's suppose you're running a default Ubuntu 16.04 installation with no changes to the existing PAM configuration files. We'll go through adding Pico to the Unity lock screen as an example.
+Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. If you want to know the full gory details, please refer to the [developer documentation](https://docs.mypico.org/developer/pam_pico/#configure).
+
+However, let's suppose you're running a default Ubuntu 16.04 installation with no changes to the existing PAM configuration files. We'll go through adding Pico to the Unity lock screen as an example.
 
 For this, open the `/etc/pam.d/unity` file in a text editor as root.
 
