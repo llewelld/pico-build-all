@@ -1,5 +1,8 @@
 # Initialise
 
+# Fail immediately on error
+set -e
+
 # Create a directory to do all of the building work in
 mkdir working
 
