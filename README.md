@@ -70,11 +70,7 @@ sudo dpkg -i libpico1-dev_0.0.3-1_amd64.deb
 sudo dpkg -i libpam-pico_0.0.3-1_amd64.deb
 ```
 
-## Using Pico
-
-You've installed the packages but it hasn't caused any visible change to your system. There are still a few things you need to do: install the app on your phone; pair your phone with your computer; and configure the PAM.
-
-### Install the app on an Android phone
+## Install the app on an Android phone
 
 The easiest way to install the app is to deploy it to your phone via USB. Ensure your phone has [developer debugging](https://www.kingoapp.com/root-tutorials/how-to-enable-usb-debugging-mode-on-android.htm) enabled and connect it via USB to your computer. To check whether your phone is developer-enabled and correctly connected, enter the following on the computer it's connected to. 
 
@@ -91,6 +87,10 @@ adb -d install built/android-pico-debug.apk
 
 In case this fails, it could be because you've got an old version of Pico already installed. Uninstall it from your phone first, then try again.
 
+## Using Pico
+
+You've installed the packages on your computer and the app on your phone. There are still a few things you need to do: pair your phone with your computer; and configure the PAM.
+
 ### Pairing your Pico
 
 You're now in a position to pair the Pico app with your computer. Enter the following on your computer.
@@ -104,6 +104,10 @@ You'll need to enter your password a couple of times and scan the QR code with y
 ### Configure pam_pico
 
 Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. Unfortunately its also a necessary step to getting Pico working. Therefore please see the [developer documentation](https://docs.mypico.org/developer/pam_pico/#configure) for the gory details.
+
+### Authenticating with Pico
+
+You're now ready to use Pico. Check out the [end user instructions](https://get.mypico.org/linux/#use-pico) for this.
 
 ## Uninstall the packages
 
