@@ -70,7 +70,7 @@ sudo dpkg -i libpico1-dev_0.0.3-1_amd64.deb
 sudo dpkg -i libpam-pico_0.0.3-1_amd64.deb
 ```
 
-## Install the app on an Android phone
+## Install Pico an Android phone
 
 The easiest way to install the app is to deploy it to your phone via USB. Ensure your phone has [developer debugging](https://www.kingoapp.com/root-tutorials/how-to-enable-usb-debugging-mode-on-android.htm) enabled and connect it via USB to your computer. To check whether your phone is developer-enabled and correctly connected, enter the following on the computer it's connected to. 
 
