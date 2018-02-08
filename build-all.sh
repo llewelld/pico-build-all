@@ -37,7 +37,7 @@ git clone git@github.com:mypico/libpicobt.git
 cd libpicobt
 cmake .
 make package
-sudo dpkg -i packages/libpicobt_0.0.2_amd64-dev.run
+sudo dpkg -i packages/libpicobt_0.0.2_amd64-run.deb
 sudo dpkg -i packages/libpicobt_0.0.2_amd64-dev.deb
 
 cp packages/libpicobt_*_amd64-run.deb ../../built/
