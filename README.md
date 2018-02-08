@@ -92,7 +92,7 @@ In case this fails, it could be because you've got an old version of Pico alread
 You're now in a position to pair the Pico app with your computer. Enter the following on your computer.
 
 ```
-gksu "pico-pair --gui --user $USER"
+gksu -k "pico-pair --gui --user $USER"
 ```
 
 You'll need to enter your password a couple of times and scan the QR code with your Pico. A wizard will take you through the process. At the end of the process, make sure you Bluetooth pair your phone with your computer.
