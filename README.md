@@ -70,11 +70,7 @@ sudo dpkg -i libpico1-dev_0.0.3-1_amd64.deb
 sudo dpkg -i libpam-pico_0.0.3-1_amd64.deb
 ```
 
-## Using Pico
-
-You've installed the packages but it hasn't caused any visible change to your system. There are still a few things you need to do: install the app on your phone; pair your phone with your compuater; and configure the PAM.
-
-### Install the app on an Android phone
+## Install the app on an Android phone
 
 The easiest way to install the app is to deploy it to your phone via USB. Ensure your phone has [developer debugging](https://www.kingoapp.com/root-tutorials/how-to-enable-usb-debugging-mode-on-android.htm) enabled and connect it via USB to your computer. To check whether your phone is developer-enabled and correctly connected, enter the following on the computer it's connected to. 
 
@@ -91,7 +87,7 @@ adb -d install built/android-pico-debug.apk
 
 In case this fails, it could be because you've got an old version of Pico already installed. Uninstall it from your phone first, then try again.
 
-### Pairing your Pico
+## Pairing your Pico
 
 You're now in a position to pair the Pico app with your computer. Enter the following on your computer.
 
@@ -101,9 +97,40 @@ gksu "pico-pair --gui --user $USER"
 
 You'll need to enter your password a couple of times and scan the QR code with your Pico. A wizard will take you through the process. At the end of the process, make sure you Bluetooth pair your phone with your computer.
 
-### Configure pam_pico
+## Configuring pam_pico
 
-Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. Unfortunately its also a necessary step to getting Pico working. Therefore please see the [developer documentation](https://docs.mypico.org/developer/pam_pico/#configure) for the gory details.
+Finally you need to configure pam_pico for use with the application you want to authenticate to. Configuring PAMs is complex and not for the faint-hearted. Too complex for this README file in fact. However, let's suppose you're running a default Ubuntu 16.04 installation with no changes to the existing PAM configuration files. We'll go through adding Pico to the Unity lock screen as an example.
+
+For this, open the `/etc/pam.d/unity` file in a text editor as root.
+
+```
+sudo nano /etc/pam.d/unity
+```
+
+You should see this:
+
+```
+@include common-auth
+auth optional pam_gnome_keyring.so
+```
+
+That's a fairly basic PAM config file (the actual hard work is going on inside the `common-auth` file that's included in this one).
+
+To add Pico functionality, you'd need to add a new line to the top of the file, as well as commenting out the `@include` line, like this.
+
+```
+auth    required /usr/lib/x86_64-linux-gnu/security/pam_pico.so channeltype=btc continuous=1 beacons=1 anyuser=1 qrtype=none input=0 timeout=0
+#@include common-auth
+auth optional pam_gnome_keyring.so
+```
+
+Now save the file. If you lock your machine now, you'll need your Pico to log in, so make sure you've correctly paired your Pico with your phone as explained above.
+
+## Authenticating with Pico
+
+If you're satisfied everything is set up correctly, lock your Unity session and you'll notice the password box has gone. Instead, a button should appear on the Pico scanner screen in your Pico app saying 'Touch to log in'.
+
+Touch the button and Pico will log you in to your computer. Check out the [end user instructions](https://get.mypico.org/linux/#use-pico) for more info about how to use Pico.
 
 ## Uninstall the packages
 
