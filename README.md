@@ -128,7 +128,7 @@ Now save the file. If you lock your machine now, you'll need your Pico to log in
 
 ## Authenticating with Pico
 
-If you're satisfied everything is set up correctly, lock your Unity session and you'll notice the password box has gone. Instead, a button should appear on the Pico scanner screen in your Pico app saying 'Touch to log in'.
+If you're satisfied everything is set up correctly, lock your Unity session and you'll notice the password box has gone. Instead, a button will appear on the Pico scanner screen of your Pico prompting you to 'Touch to log in'.
 
 Touch the button and Pico will log you in to your computer. Check out the [end user instructions](https://get.mypico.org/linux/#use-pico) for more info about how to use Pico.
 
