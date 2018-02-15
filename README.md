@@ -154,7 +154,7 @@ We welcome comments and contributions to the project. If you're interested in co
 
 ## Contact and Links
 
-More information can be found at: http://mypico.org
+More information can be found at: https://mypico.org
 
 The Pico project team:
  * Frank Stajano (PI), Frank.Stajano@cl.cam.ac.uk
