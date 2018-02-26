@@ -99,7 +99,7 @@ You're now in a position to pair the Pico app with your computer. Ensure your co
 gksu -k "pico-pair --gui --user $USER"
 ```
 
-You'll need to enter your password a couple of times and scan the QR code with your Pico. A wizard will take you through the process. At the end of the process, make sure you Bluetooth pair your phone with your computer.
+You'll need to enter your password a couple of times and scan the QR code with your Pico. A wizard will take you through the process. At the end of the process, make sure you Bluetooth pair your phone with your computer (check you've paired by [sending a file](https://help.ubuntu.com/lts/ubuntu-help/bluetooth-send-file.html) from one to the other).
 
 ## Configuring pam_pico
 
