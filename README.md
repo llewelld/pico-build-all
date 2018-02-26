@@ -93,7 +93,7 @@ In case this fails, it could be because you've got an old version of Pico alread
 
 ## Pairing your Pico
 
-You're now in a position to pair the Pico app with your computer. Enter the following on your computer.
+You're now in a position to pair the Pico app with your computer. Ensure your computer and phone both have Internet access and enter the following on your computer.
 
 ```
 gksu -k "pico-pair --gui --user $USER"
