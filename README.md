@@ -82,7 +82,7 @@ The easiest way to install the app is to deploy it to your phone via USB. Ensure
 adb devices -l
 ```
 
-If you don't see your device showing correctly in this list, you'll need to fix this first. In this case check out the details on the [Android developer site](https://developer.android.com/studio/command-line/adb.html) (a common problem is to have [permission issues](https://stackoverflow.com/q/9210152).
+If you don't see your device showing correctly in this list, you'll need to fix this first. In this case check out the details on the [Android developer site](https://developer.android.com/studio/command-line/adb.html) (a common problem is to have [permission issues](https://stackoverflow.com/q/9210152)).
 
 Once your developer-enabled Android phone is correctly connected to your computer via USB, you can install the app with the following.
 ```
