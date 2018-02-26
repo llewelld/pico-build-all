@@ -158,9 +158,11 @@ We welcome comments and contributions to the project. If you're interested in co
 
 More information can be found at: https://mypico.org
 
-The Pico project team:
- * Frank Stajano (PI), Frank.Stajano@cl.cam.ac.uk
- * David Llewellyn-Jones, David.Llewellyn-Jones@cl.cam.ac.uk
- * Claudio Dettoni, cd611@cam.ac.uk
- * Seb Aebischer, seb.aebischer@cl.cam.ac.uk
- * Kat Krol, kat.krol@cl.cam.ac.uk
+The Pico project team at time of release:
+ * Frank Stajano (PI)
+ * David Llewellyn-Jones
+ * Claudio Dettoni
+ * Seb Aebischer
+ * Kat Krol
+
+You can get in contact with us at team@cambridgeauthentication.com
