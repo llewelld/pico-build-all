@@ -55,7 +55,7 @@ Then run the following shell script. Note that this will install all of the depe
 ./build-all.sh
 ```
 
-If you're a more advanced user, you can use the makefile instead. This assumes you have `make` installed and provides a bit more visibilty. It's configurd to stop at various points to ask your consent (e.g. to install packages). You can run it by typing the following.
+If you're a more advanced user, you can use the makefile instead. This assumes you have `make` installed and provides a bit more visibilty. It's configured to stop at various points to ask your consent (e.g. to install packages). You can run it by typing the following.
 
 ```
 make
