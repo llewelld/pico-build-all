@@ -3,7 +3,14 @@
 # Fail immediately on error
 set -e
 
+
 # Create a directory to do all of the building work in
+sudo apt install make
+if [ -d working ] ; then
+    echo "ERROR: 'working' directory found."
+    echo "Run 'make clean' if OK to delete it, then rerun this script."
+    exit
+fi
 mkdir working
 
 # Create a directory to store all the juicy packages that will be built
@@ -32,7 +39,7 @@ cd ..
 
 # libpicobt
 
-sudo apt install -y libbluetooth3-dev libc6 cmake git gcc make pkg-config dh-exec doxygen graphviz
+sudo apt install -y libbluetooth3-dev libc6 cmake git gcc make check pkg-config dh-exec doxygen graphviz
 git clone git@github.com:mypico/libpicobt.git
 cd libpicobt
 cmake .
@@ -45,13 +52,14 @@ cp packages/libpicobt_*_amd64-dev.deb ../../built/
 cd ..
 
 # libpico
-
 sudo apt install -y \
   libssl-dev libcurl4-openssl-dev libqrencode-dev libbluetooth-dev liburl-dispatcher1-dev \
-  pkg-config autotools-dev devscripts debhelper dh-systemd dh-exec \
-  git gcc make check openssh-client doxygen graphviz
+  pkg-config autotools-dev autoconf devscripts debhelper dh-systemd dh-exec \
+  git gcc make check openssh-client doxygen graphviz libtool 
 git clone git@github.com:mypico/libpico.git
 cd libpico
+# https://stackoverflow.com/a/33286344
+autoreconf -f -i
 ./configure
 make
 make check
@@ -72,6 +80,8 @@ sudo apt install -y \
   git gcc make check openssh-client libtool doxygen graphviz
 git clone git@github.com:mypico/pam_pico.git
 cd pam_pico
+# https://stackoverflow.com/a/33286344
+autoreconf -f -i
 ./configure
 make
 make check
