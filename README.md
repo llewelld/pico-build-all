@@ -6,7 +6,9 @@ The Pico project is liberating humanity from passwords. See https://www.mypico.o
 
 Pico is an alternative to passwords developed at the University of Cambridge that enables a smooth and password-free login to computers, and consists of a smartphone app and associated software on your computer.
 
-If you encounter problems with any of the instructions below, please check it works on a clean Ubuntu 16.04 install. If it's still causing problems, file an [issue report](https://github.com/mypico/pico-build-all/issues), ideally including your console output and any logs generated. We will aim to look into problems, but sadly can't make commitments about being able to solve any individual issue.
+The Pico project was funded by the ERC and ran between February 2013 and December 2017. Since the project completed, this software is provided as-is; we can't offer any guarantees of updates or bug fixes. However, the software is still being maintained by our spin-out company [Cambridge Authentication](http://www.cambridgeauthentication.com).
+
+Therefore, if you encounter problems with any of the instructions below, please check it works on a clean Ubuntu 16.04 install. If it's still causing problems, file an [issue report](https://github.com/mypico/pico-build-all/issues), ideally including your console output and any logs generated. We will aim to look into problems, but sadly can't make commitments about being able to solve any individual issue.
 
 ## Install Pico on Ubuntu
 
