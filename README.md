@@ -10,7 +10,7 @@ The Pico project was funded by the ERC and ran between February 2013 and Decembe
 
 Therefore, if you encounter problems with any of the instructions below, please check it works on a clean Ubuntu 16.04 install. If it's still causing problems, file an [issue report](https://github.com/mypico/pico-build-all/issues), ideally including your console output and any logs generated. We will aim to look into problems, but sadly can't make commitments about being able to solve any individual issue.
 
-This version is [known to work](https://vimeo.com/258146744) on a Lenovo ThinkPad X270 laptop running Ubuntu 16.04 and a Nexus 6 phone running Android Nugat 7.11. We've found Bluetooth quality, especially when using dongles, to be patchy, so if you're using different devices your mileage may vary.
+This version is [known to work](https://vimeo.com/258146744) on a Lenovo ThinkPad X270 laptop running Ubuntu 16.04 and a Nexus 6 phone running Android Nougat 7.11. We've found Bluetooth quality, especially when using dongles, to be patchy, so if you're using different devices your mileage may vary.
 
 ## Install Pico on Ubuntu
 
