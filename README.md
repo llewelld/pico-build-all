@@ -111,7 +111,25 @@ Finally you need to configure pam_pico for use with the application you want to 
 
 However, let's suppose you're running a default Ubuntu 16.04 installation with no changes to the existing PAM configuration files. We'll go through adding Pico to the Unity lock screen as an example.
 
-For this, open the `/etc/pam.d/unity` file in a text editor as root.
+First open the `/etc/pam.d/common-auth` file in a text editor as root.
+
+```
+sudo nano /etc/pam.d/common-auth
+```
+
+The file is mostly comments, but just over half way down you should see the following line.
+
+```
+auth    [success=1 default=ignore]      pam_unix.so nullok_secure
+```
+
+Change this line to read:
+
+```
+auth    [success=1 default=ignore]      pam_unix.so nullok_secure try_first_pass
+```
+
+Save the changes and then open the `/etc/pam.d/unity` file in a text editor as root.
 
 ```
 sudo nano /etc/pam.d/unity
@@ -124,13 +142,13 @@ You should see this:
 auth optional pam_gnome_keyring.so
 ```
 
-That's a fairly basic PAM config file (the actual hard work is going on inside the `common-auth` file that's included in this one).
+That's a fairly basic PAM config file. The actual hard work is going on inside the `common-auth` file that you edited above and which is included in this one.
 
-To add Pico functionality, you'd need to add a new line to the top of the file, as well as commenting out the `@include` line, like this.
+To add Pico functionality, you'd need to add a new line to the top of the file.
 
 ```
-auth    required /usr/lib/x86_64-linux-gnu/security/pam_pico.so channeltype=btc continuous=1 beacons=1 anyuser=1 qrtype=none input=0 timeout=0
-#@include common-auth
+auth    requisite /usr/lib/x86_64-linux-gnu/security/pam_pico.so channeltype=btc continuous=1 beacons=1 anyuser=1 qrtype=none input=0 timeout=0
+@include common-auth
 auth optional pam_gnome_keyring.so
 ```
 
