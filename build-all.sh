@@ -76,8 +76,8 @@ cd ..
 sudo apt install -y \
   libssl-dev libcurl4-openssl-dev libqrencode-dev libbluetooth-dev liburl-dispatcher1-dev \
   libc6 libsoup2.4-dev libglib2.0-dev libdbus-glib-1-dev libgtk-3-dev libpam0g-dev \
-  gksu autoconf pkg-config autotools-dev devscripts debhelper dh-systemd dh-exec build-essential \
-  git gcc make check openssh-client libtool doxygen graphviz
+  gksu autoconf pkg-config autotools-dev automake devscripts debhelper dh-systemd dh-exec \
+  build-essential git gcc make check openssh-client libtool doxygen graphviz
 git clone git@github.com:mypico/pam_pico.git
 cd pam_pico
 # https://stackoverflow.com/a/33286344
