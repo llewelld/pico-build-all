@@ -12,8 +12,7 @@ CP_FLAGS = -u
 RSYNC = rsync
 RSYNC_FLAGS = -r -u --delete
 DEBSUFFIX = ubuntu16.04
-GITROOT = git@github.com:mypico
-#GITROOT = git@gitlab.dtg.cl.cam.ac.uk:pico
+GITROOT = https://github.com/mypico
 
 LIBPICO_RUN = libpico1_*_amd64.deb
 LIBPICO_DEV = libpico1-dev_*_amd64.deb

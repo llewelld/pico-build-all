@@ -52,7 +52,7 @@ You can build them individually by following the instructions in each of the rep
 
 But you probably don't really want to go through all of that, do you? Suppose you just want to build the lot? If you're using Ubuntu 16.04, you can just clone this repository:
 ```
-git clone git@github.com:mypico/pico-build-all.git
+git clone https://github.com/mypico/pico-build-all.git
 cd pico-build-all
 ```
 Then run the following shell script. Note that this will install all of the dependencies, accept the Android Developer licence agreement and install the packages it builds without your intervention. If you're concerned about seeing what it's doing and making these decisions yourself, use the makefile detailed below instead.

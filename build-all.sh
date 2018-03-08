@@ -22,7 +22,7 @@ cd working
 # android-pico
 
 sudo apt install -y openjdk-8-jdk git ant wget android-tools-adb lib32stdc++6 lib32z1
-git clone git@github.com:mypico/android-pico.git
+git clone https://github.com/mypico/android-pico.git
 cd android-pico
 git submodule init
 git submodule update
@@ -40,7 +40,7 @@ cd ..
 # libpicobt
 
 sudo apt install -y libbluetooth3-dev libc6 cmake git gcc make check pkg-config dh-exec doxygen graphviz
-git clone git@github.com:mypico/libpicobt.git
+git clone https://github.com/mypico/libpicobt.git
 cd libpicobt
 cmake .
 make package
@@ -56,7 +56,7 @@ sudo apt install -y \
   libssl-dev libcurl4-openssl-dev libqrencode-dev libbluetooth-dev liburl-dispatcher1-dev \
   pkg-config autotools-dev autoconf devscripts debhelper dh-systemd dh-exec \
   git gcc make check openssh-client doxygen graphviz libtool 
-git clone git@github.com:mypico/libpico.git
+git clone https://github.com/mypico/libpico.git
 cd libpico
 # https://stackoverflow.com/a/33286344
 autoreconf -f -i
@@ -78,7 +78,7 @@ sudo apt install -y \
   libc6 libsoup2.4-dev libglib2.0-dev libdbus-glib-1-dev libgtk-3-dev libpam0g-dev \
   gksu autoconf pkg-config autotools-dev automake devscripts debhelper dh-systemd dh-exec \
   build-essential git gcc make check openssh-client libtool doxygen graphviz
-git clone git@github.com:mypico/pam_pico.git
+git clone https://github.com/mypico/pam_pico.git
 cd pam_pico
 # https://stackoverflow.com/a/33286344
 autoreconf -f -i
